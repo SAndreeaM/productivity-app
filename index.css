@@ -1,0 +1,53 @@
+html {
+    background-color: #f6d6bd;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #0f2a3f;
+}
+
+p {
+    color: #08141e;
+
+}
+
+a {
+    color: #4e495f;
+}
+
+a:hover {
+    color: #816271;
+}
+
+.slider-container {
+    width: 100%;
+}
+
+#side {
+}
+
+#graphic {
+}
+
+#controls {
+}
+
+footer {
+    display: block;
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+}
