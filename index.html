@@ -16,10 +16,13 @@
             <img src="https://placehold.co/400" alt="placeholder-image">
         </div>
         <div id="controls">
-            <p>controls</p>
-            <div id="sound1" class="slider-container">
+            <div id="sound1" class="sound-container flex-container">
                 <h3>Sound1</h3>
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <div class="controls-container flex-container">
+                    <button id="play-btn" class="snd-btn fa-solid fa-play"></button>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <button class="snd-btn fa-solid fa-volume-off"></button>
+                </div>
             </div>
         </div>
     </body>
@@ -33,4 +36,5 @@
     </footer>
 
     <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/873535be36.js" crossorigin="anonymous"></script>
 </html>

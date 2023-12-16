@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@100&display=swap');
+
 html {
     background-color: #f6d6bd;
 }
@@ -15,8 +17,13 @@ body {
     height: 100vh;
 }
 
-h1 {
+h1, h3 {
     color: #0f2a3f;
+    font-family: 'Playfair Display', serif;
+}
+
+p, a {
+    font-family: 'Roboto', sans-serif;
 }
 
 p {
@@ -26,14 +33,11 @@ p {
 
 a {
     color: #4e495f;
+    font-weight: bold;
 }
 
 a:hover {
     color: #816271;
-}
-
-.slider-container {
-    width: 100%;
 }
 
 #side {
@@ -50,4 +54,33 @@ footer {
     position: fixed;
     text-align: center;
     bottom: 0;
+}
+
+button {
+    background-color: #f6d6bd;
+    border: none;
+    color: #0f2a3f;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.sound-container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: left;
+    height: 100%;
+}
+
+.controls-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: left;
+    height: 100%;
+}
+
+#play-btn {
+    padding-left: 0;
 }
