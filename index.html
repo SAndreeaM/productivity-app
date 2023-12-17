@@ -17,11 +17,15 @@
         </div>
         <div id="controls">
             <div id="sound1" class="sound-container flex-container">
-                <h3>Sound1</h3>
+                <audio loop id="light-rain-ambient">
+                    <source src="media/light-rain-ambient.mp3" type="audio/mpeg">
+                </audio>
+                <h3>Light Rain</h3>
+                <!--Sound Effect by <a href="https://pixabay.com/users/soundsforyou-4861230/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=114354">Mikhail</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=114354">Pixabay</a>-->
                 <div class="controls-container flex-container">
-                    <button id="play-btn" class="snd-btn fa-solid fa-play"></button>
-                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                    <button class="snd-btn fa-solid fa-volume-off"></button>
+                    <button id="light-rain-ambient-play-btn" class="snd-btn fa-solid fa-play" onclick="stopPlay(event)"></button>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="light-rain-ambient-range" oninput="modifyVolume(event)">
+                    <button id="light-rain-ambient-vol-btn" class="snd-btn fa-solid fa-volume-off" onclick="muteVolume(event)"></button>
                 </div>
             </div>
         </div>
