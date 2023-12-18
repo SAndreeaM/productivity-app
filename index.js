@@ -1,14 +1,24 @@
-playBtnSufLen = "-play-btn".length;
-rangeSufLen = "-range".length;
-volBtnSufLen = "-vol-btn".length;
+var playBtnSufLen = "-play-btn".length;
+var rangeSufLen = "-range".length;
+var volBtnSufLen = "-vol-btn".length;
 
 var lastVolume = 0.5;
 
+function getSound(btnId, btnSufLen) {
+    const sndId = btnId.substring(0, btnId.length - btnSufLen);
+    const snd = document.getElementById(sndId);
+    return {sndId, snd};
+}
+
+function getButton(event) {
+    const btnId = event.target.id;
+    const btn = document.getElementById(btnId);
+    return {btnId, btn};
+}
+
 function stopPlay(event) {
-    btnId = event.target.id;
-    btn = document.getElementById(btnId);
-    sndId = btnId.substring(0, btnId.length - playBtnSufLen);
-    snd = document.getElementById(sndId);
+    const {btnId, btn} = getButton(event);
+    const {sndId, snd} = getSound(btnId, playBtnSufLen);
 
     if(btn.classList.contains("fa-play")) {
         btn.classList.remove("fa-play");
@@ -26,21 +36,28 @@ function stopPlay(event) {
 }
 
 function modifyVolume(event) {
+    // TODO: Fix this not working
+    //const {rangeId, range} = getButton(event);
+    //alert(rangeId);
     rangeId = event.target.id;
     range = document.getElementById(rangeId);
 
-    sndId = rangeId.substring(0, rangeId.length - rangeSufLen);
-    snd = document.getElementById(sndId);
+    const {sndId, snd} = getSound(rangeId, rangeSufLen);
+    //sndId = rangeId.substring(0, rangeId.length - rangeSufLen);
+    //snd = document.getElementById(sndId);
 
-    btnId = sndId + "-vol-btn";
-    btn = document.getElementById(btnId);
+    const btnId = sndId + "-vol-btn";
+    const btn = document.getElementById(btnId);
 
     snd.volume = range.value / 100;
     lastVolume = snd.volume;
 
+    //alert(snd.volume);
+
     btn.classList.remove("fa-volume-off");
     btn.classList.remove("fa-volume-low");
     btn.classList.remove("fa-volume-high");
+    btn.classList.remove("fa-volume-xmark");
 
     if(lastVolume < 0.33 && lastVolume > 0)
         btn.classList.add("fa-volume-off");
@@ -55,6 +72,7 @@ function modifyVolume(event) {
 function muteVolume(event) {
     btnId = event.target.id;
     btn = document.getElementById(btnId);
+
     sndId = btnId.substring(0, btnId.length - volBtnSufLen);
     snd = document.getElementById(sndId);
 
