@@ -28,13 +28,20 @@
                     <source src="media/light-rain-ambient.mp3" type="audio/mpeg">
                 </audio>
                 <h3>Light Rain</h3>
-                <!--Sound Effect by <a href="https://pixabay.com/users/soundsforyou-4861230/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=114354">Mikhail</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=114354">Pixabay</a>-->
                 <div class="controls-container flex-container">
                     <button id="light-rain-ambient-play-btn" class="snd-btn fa-solid fa-play" onclick="stopPlay(event)"></button>
                     <input type="range" min="1" max="100" value="50" class="slider" id="light-rain-ambient-range" oninput="modifyVolume(event)">
                     <button id="light-rain-ambient-vol-btn" class="snd-btn fa-solid fa-volume-off" onclick="muteVolume(event)"></button>
                 </div>
-                <button id="info-btn" class="fa-solid fa-circle-info"></button>
+
+                <!-- Popup -->
+                <div id="light-rain-popup" class="popup">
+                    <div class="popup-tail"></div>
+                    <p>
+                        Sound Effect by <a href="https://pixabay.com/users/soundsforyou-4861230/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=114354">Mikhail</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=114354">Pixabay</a>
+                    </p>
+                </div>
+                <button id="light-rain-info-btn" class="fa-solid fa-circle-info popup-btn"></button>
             </div>
         </div>
     </body>

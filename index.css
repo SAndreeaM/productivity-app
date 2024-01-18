@@ -3,7 +3,7 @@
 
 /* Default Styles */
 html {
-    background-color: #f6d6bd;
+    background-color: #F3E5C3;
 }
 
 .flex-container {
@@ -20,7 +20,7 @@ body {
 }
 
 h1, h3 {
-    color: #0f2a3f;
+    color: #423330;
     font-family: 'Playfair Display', serif;
 }
 
@@ -29,17 +29,17 @@ p, a {
 }
 
 p {
-    color: #08141e;
+    color: #98644F;
 
 }
 
 a {
-    color: #4e495f;
+    color: #C47646;
     font-weight: bold;
 }
 
 a:hover {
-    color: #816271;
+    color: #C68B61;
 }
 
 /* Side Styles */
@@ -71,14 +71,37 @@ a:hover {
 }
 
 button {
-    background-color: #f6d6bd;
+    background-color: transparent;
     border: none;
-    color: #0f2a3f;
+    color: #423330;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+.popup-btn {
+    cursor: pointer;
+}
+
+.popup {
+    background-color: black;
+    border-radius: 15px;
+
+    position: absolute;
+    padding: 10px 20px;
+}
+
+.popup-tail::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid black;
+    border-top: 20x;
+    top: 100%;
 }
 
 /* Footer Styles */
