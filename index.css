@@ -1,9 +1,43 @@
 /* Imported Styles */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@100&display=swap');
 
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 /* Default Styles */
+/* TODO: Fix fadeOut animation not working due to 'hidden' property */
+.hidden {
+    visibility: hidden;
+
+    animation-name: fadeOut;
+    animation-duration: 1s;
+}
+
+.visible {
+    visibility: visible;
+
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
 html {
-    background-color: #F3E5C3;
+    background-color: #F6D6BD;
 }
 
 .flex-container {
@@ -20,7 +54,7 @@ body {
 }
 
 h1, h3 {
-    color: #423330;
+    color: #08141E;
     font-family: 'Playfair Display', serif;
 }
 
@@ -29,17 +63,37 @@ p, a {
 }
 
 p {
-    color: #98644F;
+    color: #0F2A3F;
 
 }
 
 a {
-    color: #C47646;
+    color: #4E495F;
     font-weight: bold;
 }
 
 a:hover {
-    color: #C68B61;
+    color: #816271;
+}
+
+input {
+    appearance: none;
+    background: none;
+    cursor: pointer;
+
+    width: 11vw;
+    height: 10px;
+    background-color: #997577;
+}
+
+input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+
+    height: 20px;
+    width: 20px;
+    background: #F6D6BD;
+    border: 3px #997577 solid;
+    border-radius: 100%;
 }
 
 /* Side Styles */
@@ -57,7 +111,7 @@ a:hover {
 .controls-container {
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: left;
+    align-items: center;
     height: 100%;
     margin: 10px;
 }
@@ -73,7 +127,7 @@ a:hover {
 button {
     background-color: transparent;
     border: none;
-    color: #423330;
+    color: #997577;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -85,23 +139,30 @@ button {
     cursor: pointer;
 }
 
-.popup {
-    background-color: black;
-    border-radius: 15px;
-
-    position: absolute;
-    padding: 10px 20px;
+.popup-container {
+    position: relative;
 }
 
-.popup-tail::after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid black;
-    border-top: 20x;
-    top: 100%;
+.popup {
+    position: absolute;
+    padding: 10px 20px;
+    top: -100px;
+    right: -170px;
+
+    text-align: center;
+    width: 250px;
+    background-color: #997577;
+    border-radius: 15px;
+
+    color: #F6D6BD;
+}
+
+.popup a {
+    color: #C3A38A;
+}
+
+.popup a:hover {
+    color: #F6D6BD;
 }
 
 /* Footer Styles */
